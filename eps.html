@@ -55,12 +55,16 @@
         <button aria-controls="judge-registration">Judge Registration</button>
         <button aria-controls="judge-schedule">Judge Schedule</button>
 
-        <div class="menu-item has-submenu">
+        <div
+          class="menu-item has-submenu d-flex justify-content-center align-items-center"
+          style="height: 100%"
+        >
           <button
             aria-haspopup="true"
             aria-controls="submenu-sponsorship"
             aria-expanded="false"
-            class="flex items-center gap-1"
+            class="flex items-center gap-1 w-100 h-100"
+            style="margin: 0 auto; display: block; height: 100%"
           >
             Sponsorship Opportunities
             <i
@@ -80,10 +84,7 @@
                   button.getAttribute("aria-expanded") === "true";
                 button.setAttribute("aria-expanded", String(!expanded));
                 submenu.classList.toggle("hidden");
-                icon.classList.toggle("rotated");
-                if (!expanded) {
-                  submenu.querySelector("a").focus();
-                }
+                icon.classList.toggle("icon-rotated");
               });
 
               document.addEventListener("click", (e) => {
@@ -131,13 +132,13 @@
             id="submenu-sponsorship"
             class="submenu hidden"
             role="menu"
-            aria-label="Sponsorship submenu"
+            aria-label="Sponsorship Submenu"
           >
-            <li role="none">
-              <a href="#benefits" role="menuitem">Sponsor an Award</a>
+            <li>
+              <a href="#benefits" role="menu-item">Sponsor an Award</a>
             </li>
-            <li role="none">
-              <a href="#levels" role="menuitem">Sponsor a Capstone Project</a>
+            <li>
+              <a href="#levels" role="menu-item">Sponsor a Capstone Project</a>
             </li>
           </ul>
         </div>
