@@ -1,0 +1,282 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link
+  rel="shortcut icon"
+  href="https://themes.secure-platform.com/tamuengineeringprojectshowcase.secure-platform.com/images/favicon.png"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+  crossorigin="anonymous"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+  href="https://themes.secure-platform.com/OpenWater/theme-2024/main.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<script src="https://themes.secure-platform.com/OpenWater/theme-2024/index.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+  crossorigin="anonymous"
+></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+  rel="stylesheet"
+/>
+
+<link href="main.css" rel="stylesheet" type="text/css" />
+
+<header class="main-header">
+  <div class="main-header__wrapper">
+    <a class="logo" href="https://tamuvps.secure-platform.com/judges/">
+      <img
+        alt="Engineering Project Showcase - College of Engineering"
+        src="public/coe.svg"
+      />
+    </a>
+    <nav aria-label="Navigation Bar" class="main-nav">
+      <div class="main-nav__mobile-toggle">
+        <button class="menu-toggle">
+          Menu<span class="hamburger-icon">…</span>
+        </button>
+      </div>
+      <div class="main-nav__links">
+        <button aria-controls="home" onclick="window.location.href='main.html'">Home</button>
+        <button aria-controls="judge-registration">Judge Registration</button>
+        <button aria-controls="sponsor-award" onclick="window.location.href='sponsors.html'">Sponsors</button>
+        <button aria-controls="sponsor-capstone" onclick="window.location.href='sponsor-capstone.html'">
+          Sponsor a Capstone
+        </button>
+
+        <div
+          class="menu-item has-submenu d-flex justify-content-center align-items-center"
+          style="height: 100%"
+        >
+          <button
+            aria-haspopup="true"
+            aria-controls="submenu-sponsorship"
+            aria-expanded="false"
+            class="flex items-center gap-1 w-100 h-100"
+            style="margin: 0 auto; display: block; height: 100%"
+          >
+            Past Events
+            <i
+              class="fas fa-angle-double-right transition-transform duration-200"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const container = document.querySelector(".has-submenu");
+              const button = container.querySelector("button");
+              const submenu = container.querySelector(".submenu");
+              const icon = button.querySelector("i");
+
+              button.addEventListener("click", () => {
+                const expanded =
+                  button.getAttribute("aria-expanded") === "true";
+                button.setAttribute("aria-expanded", String(!expanded));
+                submenu.classList.toggle("hidden");
+                icon.classList.toggle("icon-rotated");
+              });
+
+              document.addEventListener("click", (e) => {
+                if (
+                  !container.contains(e.target) &&
+                  button.getAttribute("aria-expanded") === "true"
+                ) {
+                  button.click();
+                }
+              });
+
+              button.addEventListener("keydown", (e) => {
+                if (e.key === " " || e.key === "Enter") {
+                  e.preventDefault();
+                  button.click();
+                } else if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  if (button.getAttribute("aria-expanded") === "false")
+                    button.click();
+                  submenu.querySelector("a").focus();
+                }
+              });
+
+              submenu.addEventListener("keydown", (e) => {
+                const items = Array.from(submenu.querySelectorAll("a"));
+                const currentIndex = items.indexOf(document.activeElement);
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  items[(currentIndex + 1) % items.length].focus();
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  items[
+                    (currentIndex - 1 + items.length) % items.length
+                  ].focus();
+                } else if (e.key === "Escape") {
+                  e.preventDefault();
+                  button.click();
+                  button.focus();
+                }
+              });
+            });
+          </script>
+
+          <ul
+            id="submenu-sponsorship"
+            class="submenu hidden no-bullets"
+            role="menu"
+            aria-label="Sponsorship Submenu"
+          >
+            <li>
+              <a
+                href="https://drive.google.com/file/d/18akhRQkECU9UAFltHKDNYBAQgVWn-yc2/view?usp=sharing"
+                role="menu-item"
+                >Winning Teams
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="#levels" role="menu-item"
+                >Award Ceremony
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/drive/folders/1ZQpKymN8Um3xbxABeRI9YwdWv6Kf7G_V"
+                role="menu-item"
+                >Gallery
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div style="text-align: center">
+  <div class="banner-container-sponsor">
+    <img
+      src="https://engineering.tamu.edu/news/2019/04/_news-images/NUEN-news-TRIGA-reactor-23April20191.jpg"
+      alt="Sponsors Banner"
+      class="banner-img"
+    />
+    <div class="banner-overlay-sponsor"></div>
+    <h1 class="banner-heading oswald-heading header-underline-sponsor">Sponsor a Capstone</h1>
+  </div>
+</div>
+
+<footer class="main-footer">
+  <div class="main-footer__wrapper">
+    <div class="main-footer__top">
+      <div class="main-footer__location">
+        <a class="logo" href="index.html" title="College of Engineering">
+          <img
+            alt="Engineering Texas A&amp;amp;M University"
+            height="157"
+            src="public/coe.svg"
+            title="Logo"
+            width="814"
+          />
+        </a>
+        <div class="vcard">
+          <div class="adr">
+            <div class="street-address">
+              Texas A&amp;M University College of Engineering, 3127 TAMU,
+            </div>
+            <span class="locality">College Station</span>,
+            <abbr class="region" title="Texas">TX&nbsp;</abbr
+            ><span class="postal-code"
+              >77843-3127 (<a
+                href="https://www.tamu.edu/map/?id=427#!m/198904"
+                rel="noopener"
+                target="_blank"
+                title="Zachry Engineering Education Complex TAMU Map"
+                >ZACH</a
+              >) <br />
+            </span>
+          </div>
+        </div>
+        <ul>
+          <li class="email">
+            <a href="mailto:inp@tamu.edu">inp@tamu.edu</a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-footer__eps-link">
+        <h5>Engineering Project Showcase</h5>
+        <p>
+          Industry & Nonprofit Partnerships
+          <br />
+          For More Information, Visit:
+          <a
+            href="https://engineering.tamu.edu/industry-and-nonprofit-partnerships/eps.html"
+            rel="noopener"
+            target="_blank"
+            >tx.ag/EngPS</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="main-footer__bottom">
+      <p>
+        This website is not hosted on the TAMU Network, it is a service provided
+        by OpenWater on behalf of The College of Engineering of Texas A&M
+        University.
+        <br />
+        Copyright © <span id="currentYear"></span>, Texas A&amp;M Engineering,
+        All Rights Reserved
+      </p>
+
+      <script>
+        const currYear = document.getElementById("currentYear");
+        currYear.textContent = new Date().getFullYear();
+        currYear.style.fontSize = "inherit";
+      </script>
+
+      <div class="link-collection">
+        <ul>
+          <li>
+            <a
+              href="https://www.getopenwater.com/privacy-policy/"
+              rel="noopener"
+              target="_blank"
+              title="Privacy Policy of OpenWater"
+              >Privacy Policy of OpenWater
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.tamu.edu/statements/privacy.html"
+              rel="noopener"
+              target="_blank"
+              title="Privacy Policy of TAMU"
+              >Privacy Policy of TAMU
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

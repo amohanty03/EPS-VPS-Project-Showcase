@@ -51,13 +51,14 @@
         </button>
       </div>
       <div class="main-nav__links">
-        <button aria-controls="home">Home</button>
+        <button aria-controls="home" onclick="window.location.href='main.html'">Home</button>
         <button aria-controls="judge-registration">Judge Registration</button>
-        <button aria-controls="sponsor-award">Sponsor an Award</button>
-        <button aria-controls="sponsor-capstone">Sponsor a Capstone Project</button>
-        <!-- <button aria-controls="judge-schedule">Judge Schedule</button> -->
+        <button aria-controls="sponsor-award" onclick="window.location.href='sponsors.html'">Sponsors</button>
+        <button aria-controls="sponsor-capstone" onclick="window.location.href='sponsor-capstone.html'">
+          Sponsor a Capstone
+        </button>
 
-        <!-- <div
+        <div
           class="menu-item has-submenu d-flex justify-content-center align-items-center"
           style="height: 100%"
         >
@@ -68,7 +69,7 @@
             class="flex items-center gap-1 w-100 h-100"
             style="margin: 0 auto; display: block; height: 100%"
           >
-            Sponsorship Opportunities
+            Past Events
             <i
               class="fas fa-angle-double-right transition-transform duration-200"
               aria-hidden="true"
@@ -132,13 +133,15 @@
 
           <ul
             id="submenu-sponsorship"
-            class="submenu hidden"
+            class="submenu hidden no-bullets"
             role="menu"
             aria-label="Sponsorship Submenu"
           >
             <li>
-              <a href="#benefits" role="menu-item"
-                >Sponsor an Award
+              <a
+                href="https://drive.google.com/file/d/18akhRQkECU9UAFltHKDNYBAQgVWn-yc2/view?usp=sharing"
+                role="menu-item"
+                >Winning Teams
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -147,7 +150,18 @@
             </li>
             <li>
               <a href="#levels" role="menu-item"
-                >Sponsor a Capstone Project
+                >Award Ceremony
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/drive/folders/1ZQpKymN8Um3xbxABeRI9YwdWv6Kf7G_V"
+                role="menu-item"
+                >Gallery
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -155,7 +169,7 @@
               ></a>
             </li>
           </ul>
-        </div> -->
+        </div>
       </div>
     </nav>
   </div>
@@ -364,19 +378,179 @@
       >ORGANIZATIONS REPRESENTED BY PAST JUDGES</span
     >
   </p>
-  <div class="ratio ratio-16x9" style="max-width: 700px; margin: 0 auto; padding-left: 0.5rem; padding-right: 0.5rem;">
+  <div
+    class="ratio ratio-16x9"
+    style="
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      padding-bottom: 0.5rem;
+    "
+  >
     <iframe
       src="https://www.youtube.com/embed/ins52cy6WJk?si=hbfsjE4ZX5Z-38DA"
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen
-      style="border:0;"
+      style="border: 0"
     ></iframe>
   </div>
 </div>
 
-<hr />
+<!-- <hr style="margin-top: 2rem; margin-bottom: 2rem" />
+<p style="text-align: center" class="oswald-heading font-color">
+  <span class="header-underline"> SHOWCASE SPONSORS </span>
+</p>
+<div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow" style="border-radius: 16px">
+        <div class="card-body" style="border-radius: 12px">
+          <h5 class="card-title mb-2 font-color">Platinum Sponsor</h5>
+          <a href="https://www.bray.com/" target="_blank">
+            <img
+              src="https://tamuengineeringprojectshowcase.secure-platform.com/file/568/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjgsImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.3-snSimhhj4lWifIo8vOFZeT5CNQ51qZuF7rK9n1oXQ"
+              alt="Platinum Sponsor Logo Bray"
+              class="img-fluid mt-4"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+          <a
+            href="https://www.samsung.com/us/about-us/leadership-and-mission/"
+            target="_blank"
+          >
+            <img
+              src="https://tamuvps.secure-platform.com/file/1271/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxMjcxLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.Ne-9ZoKlF7-SMBwIGLJrUyVM8cp68ha9LdeYySD8EXk?Samsung_wordmark.svg.png"
+              alt="Platinum Sponsor Logo Samsung"
+              class="img-fluid mt-4"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+          <a href="https://www.tsmc.com/english" target="_blank">
+            <img
+              src="https://tamueps.secure-platform.com/file/2092/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDkyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.ckzMda9fMNEi291zbKzb2HZ-B03ULvOPmTzTsnveGGI?TSMC.jpg"
+              alt="Platinum Sponsor Logo TSMC"
+              class="img-fluid mt-4"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow" style="border-radius: 16px">
+        <div class="card-body" style="border-radius: 12px">
+          <h5 class="card-title mb-4 font-color">Gold Sponsor</h5>
+          <a href="https://www.caterpillar.com/" target="_blank">
+            <img
+              src="https://tamuengineeringprojectshowcase.secure-platform.com/file/569/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjksImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.MxFS_jm9DbTd4wbtcHZrEIUaMAWqNssWNLiRkSD6nMs"
+              alt="Gold Sponsor Logo Caterpillar"
+              class="img-fluid"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+          <a href="https://noblereachfoundation.org/" target="_blank">
+            <img
+              src="https://tamuvps.secure-platform.com/file/1793/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzkzLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.XNiJMQs5spS1j_vKRXyWSW9itIxHv_zerNci-BbZ6N4?NobleReach-Logo-Color_small.png"
+              alt="Gold Sponsor Logo NobleReach"
+              class="img-fluid"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+          <a href="https://www.megger.com/en" target="_blank">
+            <img
+              src="https://tamueps.secure-platform.com/file/2190/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMTkwLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.Gs1CgTikxfX2-Gd6NsGkZfLDOde_0e5Jna3rHH7tdpk?megger.png"
+              alt="Platinum Sponsor Logo Megger"
+              class="img-fluid"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+          <a
+            href="https://engineering.tamu.edu/student-life/eep/index.html"
+            target="_blank"
+          >
+            <img
+              src="https://tamueps.secure-platform.com/file/2192/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMTkyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.ltlgUtR4Qoa8wkWe9MgZgF7Qc03viT4HWOsQcNIcREc"
+              alt="Platinum Sponsor Logo Meloy"
+              class="img-fluid"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow" style="border-radius: 16px">
+        <div class="card-body" style="border-radius: 12px">
+          <h5 class="card-title mb-4 font-color">Silver Sponsor</h5>
+          <a href="https://www.bakerhughes.com/" target="_blank">
+            <img
+              src="https://tamueps.secure-platform.com/file/2029/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDI5LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.dDFSZIPPHMWflHuai0T3nPchaf2aXH556CtWSICMZFI?Baker_Hughes_logo.svg.png"
+              alt="Silver Sponsor Logo Baker Hughes"
+              class="img-fluid"
+              style="
+                max-height: 120px;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+              "
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align: center">
+      <strong
+        ><span style="font-size: 18px"
+          >If interested in being a sponsor, please see the flyer below for
+          those opportunities!</span
+        ></strong
+      ><img
+        src="https://tamueps.secure-platform.com/file/2032/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDMyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.J54SaewjCN_ZjJEMkw4dVupHKZ3nHvZcUD0NRJV4LjA?Sponsorship%20Opportunities%20%28Landscape%29.png"
+        style="height: 759px; width: 1350px"
+      />
+    </p>
+  </div>
+</div> -->
+
+<hr style="margin-top: 2rem; margin-bottom: 2rem" />
 <p style="text-align: center" class="oswald-heading font-color">
   <span class="header-underline">JUDGE TESTIMONIALS</span>
 </p>
@@ -424,7 +598,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-3">
+    <!-- <div class="col-md-4 mb-3">
       <div class="card h-100 shadow" style="border-radius: 16px">
         <div class="card-body" style="border-radius: 12px">
           <h5 class="card-title mb-1 font-color">Jane Doe</h5>
@@ -465,7 +639,7 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -475,38 +649,46 @@
 </p>
 <div class="container my-4">
   <div class="row justify-content-center mb-3">
-    <div class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center">
+    <div
+      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+    >
       <img
         src="https://tamuvps.secure-platform.com/file/1755/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU1LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.LD_fNTABhj7dRUSQpOV7Lfuxum0Wz4DF3FpQQCcY9FM?quickSocial_004.jpg"
         class="img-fluid rounded shadow"
         alt="Past Event Entry 1"
-        style="max-width: 400px; max-height: 267px; object-fit: cover;"
+        style="max-width: 400px; max-height: 267px; object-fit: cover"
       />
     </div>
-    <div class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center">
+    <div
+      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+    >
       <img
         src="https://tamuvps.secure-platform.com/file/1756/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU2LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.XBpamVHfXeEIzRBKOmOtOXp6MRLweGYgoNvKHEF6avk?quickSocial_013.jpg"
         class="img-fluid rounded shadow"
         alt="Past Event Entry 2"
-        style="max-width: 400px; max-height: 267px; object-fit: cover;"
+        style="max-width: 400px; max-height: 267px; object-fit: cover"
       />
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center">
+    <div
+      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+    >
       <img
         src="https://tamuvps.secure-platform.com/file/1757/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU3LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.iyeOTFulZy5T3eFtyp87OXmBw5BzNpiSUYGrIFosU0o?quickSocial_014.jpg"
         class="img-fluid rounded shadow"
         alt="Past Event Entry 3"
-        style="max-width: 400px; max-height: 267px; object-fit: cover;"
+        style="max-width: 400px; max-height: 267px; object-fit: cover"
       />
     </div>
-    <div class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center">
+    <div
+      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+    >
       <img
         src="https://tamuvps.secure-platform.com/file/1758/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU4LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.-oBCmQWdyeQfotUWRfDKZ7i6WkT8QunMR8cTCpaxJLw?IMG_3999.jpg"
         class="img-fluid rounded shadow"
         alt="Past Event Entry 4"
-        style="max-width: 400px; max-height: 267px; object-fit: cover;"
+        style="max-width: 400px; max-height: 267px; object-fit: cover"
       />
     </div>
   </div>

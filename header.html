@@ -1,0 +1,138 @@
+<header class="main-header">
+  <div class="main-header__wrapper">
+    <a class="logo" href="https://tamuvps.secure-platform.com/judges/">
+      <img
+        alt="Engineering Project Showcase - College of Engineering"
+        src="public/coe.svg"
+      />
+    </a>
+    <nav aria-label="Navigation Bar" class="main-nav">
+      <div class="main-nav__mobile-toggle">
+        <button class="menu-toggle">
+          Menu<span class="hamburger-icon">…</span>
+        </button>
+      </div>
+      <div class="main-nav__links">
+        <button aria-controls="home">Home</button>
+        <button aria-controls="judge-registration">Judge Registration</button>
+        <button aria-controls="sponsor-award">Sponsors</button>
+        <button aria-controls="sponsor-capstone">
+          Sponsor a Capstone
+        </button>
+
+        <div
+          class="menu-item has-submenu d-flex justify-content-center align-items-center"
+          style="height: 100%"
+        >
+          <button
+            aria-haspopup="true"
+            aria-controls="submenu-sponsorship"
+            aria-expanded="false"
+            class="flex items-center gap-1 w-100 h-100"
+            style="margin: 0 auto; display: block; height: 100%"
+          >
+            Past Events
+            <i
+              class="fas fa-angle-double-right transition-transform duration-200"
+              aria-hidden="true"
+            ></i>
+          </button>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const container = document.querySelector(".has-submenu");
+              const button = container.querySelector("button");
+              const submenu = container.querySelector(".submenu");
+              const icon = button.querySelector("i");
+
+              button.addEventListener("click", () => {
+                const expanded =
+                  button.getAttribute("aria-expanded") === "true";
+                button.setAttribute("aria-expanded", String(!expanded));
+                submenu.classList.toggle("hidden");
+                icon.classList.toggle("icon-rotated");
+              });
+
+              document.addEventListener("click", (e) => {
+                if (
+                  !container.contains(e.target) &&
+                  button.getAttribute("aria-expanded") === "true"
+                ) {
+                  button.click();
+                }
+              });
+
+              button.addEventListener("keydown", (e) => {
+                if (e.key === " " || e.key === "Enter") {
+                  e.preventDefault();
+                  button.click();
+                } else if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  if (button.getAttribute("aria-expanded") === "false")
+                    button.click();
+                  submenu.querySelector("a").focus();
+                }
+              });
+
+              submenu.addEventListener("keydown", (e) => {
+                const items = Array.from(submenu.querySelectorAll("a"));
+                const currentIndex = items.indexOf(document.activeElement);
+                if (e.key === "ArrowDown") {
+                  e.preventDefault();
+                  items[(currentIndex + 1) % items.length].focus();
+                } else if (e.key === "ArrowUp") {
+                  e.preventDefault();
+                  items[
+                    (currentIndex - 1 + items.length) % items.length
+                  ].focus();
+                } else if (e.key === "Escape") {
+                  e.preventDefault();
+                  button.click();
+                  button.focus();
+                }
+              });
+            });
+          </script>
+
+          <ul
+            id="submenu-sponsorship"
+            class="submenu hidden no-bullets"
+            role="menu"
+            aria-label="Sponsorship Submenu"
+          >
+            <li>
+              <a
+                href="https://drive.google.com/file/d/18akhRQkECU9UAFltHKDNYBAQgVWn-yc2/view?usp=sharing"
+                role="menu-item"
+                >Winning Teams
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a href="#levels" role="menu-item"
+                >Award Ceremony
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://drive.google.com/drive/folders/1ZQpKymN8Um3xbxABeRI9YwdWv6Kf7G_V"
+                role="menu-item"
+                >Gallery
+                <i
+                  class="fas fa-angle-right transition-transform duration-200"
+                  aria-hidden="true"
+                ></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
