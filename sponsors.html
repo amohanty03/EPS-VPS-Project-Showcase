@@ -47,34 +47,61 @@
     <nav aria-label="Navigation Bar" class="main-nav">
       <div class="main-nav__mobile-toggle">
         <button class="menu-toggle">
-          Menu<span class="hamburger-icon">…</span>
+          Menu
+          <div class="hamburger" style="margin-left: 6px" id="hamburger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         </button>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const btn = document.querySelector(".menu-toggle");
+          const links = document.querySelector(".main-nav__links");
+          const hamburger = document.getElementById("hamburger");
+          btn.addEventListener("click", () => {
+            links.classList.toggle("open");
+            hamburger.classList.toggle("change");
+          });
+        });
+      </script>
+
       <div class="main-nav__links">
-        <button aria-controls="home" onclick="window.location.href='main.html'">Home</button>
+        <button aria-controls="home" onclick="window.location.href='main.html'">
+          Home
+        </button>
         <button aria-controls="judge-registration">Judge Registration</button>
-        <button aria-controls="sponsor-award" onclick="window.location.href='sponsors.html'">Sponsors</button>
-        <button aria-controls="sponsor-capstone" onclick="window.location.href='sponsor-capstone.html'">
+        <button
+          aria-controls="sponsor-award"
+          onclick="window.location.href='sponsors.html'"
+        >
+          Sponsors
+        </button>
+        <button
+          aria-controls="sponsor-capstone"
+          onclick="window.location.href='sponsor-capstone.html'"
+        >
           Sponsor a Capstone
         </button>
 
-        <div
-          class="menu-item has-submenu d-flex justify-content-center align-items-center"
-          style="height: 100%"
-        >
+        <div class="menu-item has-submenu">
           <button
+            type="button"
             aria-haspopup="true"
             aria-controls="submenu-sponsorship"
             aria-expanded="false"
-            class="flex items-center gap-1 w-100 h-100"
-            style="margin: 0 auto; display: block; height: 100%"
+            class="flex items-center w-100 h-100"
+            style="height: 100%"
           >
             Past Events
             <i
               class="fas fa-angle-double-right transition-transform duration-200"
+              style="margin-left: 4px"
               aria-hidden="true"
             ></i>
           </button>
+
           <script>
             document.addEventListener("DOMContentLoaded", function () {
               const container = document.querySelector(".has-submenu");
@@ -140,7 +167,9 @@
             <li>
               <a
                 href="https://drive.google.com/file/d/18akhRQkECU9UAFltHKDNYBAQgVWn-yc2/view?usp=sharing"
-                role="menu-item" target="_blank" rel="noopener"
+                role="menu-item"
+                target="_blank"
+                rel="noopener"
                 >Winning Teams
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
@@ -149,8 +178,12 @@
               ></a>
             </li>
             <li>
-            <a href="https://drive.google.com/file/d/18ZZHr86GEw4rjhh05eCGd9MP4l7pdCAO/view?usp=sharing" role="menu-item" target="_blank" rel="noopener">
-                Award Ceremony
+              <a
+                href="https://drive.google.com/file/d/18ZZHr86GEw4rjhh05eCGd9MP4l7pdCAO/view?usp=sharing"
+                role="menu-item"
+                target="_blank"
+                rel="noopener"
+                >Award Ceremony
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -160,7 +193,9 @@
             <li>
               <a
                 href="https://drive.google.com/drive/folders/1ZQpKymN8Um3xbxABeRI9YwdWv6Kf7G_V"
-                role="menu-item" target="_blank" rel="noopener"
+                role="menu-item"
+                target="_blank"
+                rel="noopener"
                 >Gallery
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
@@ -183,7 +218,9 @@
       class="banner-img"
     />
     <div class="banner-overlay-sponsor"></div>
-    <h1 class="banner-heading oswald-heading header-underline-sponsor">Showcase Sponsors</h1>
+    <h1 class="banner-heading oswald-heading header-underline-sponsor">
+      Showcase Sponsors
+    </h1>
   </div>
 </div>
 <div class="container my-4">
@@ -191,14 +228,16 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100 shadow" style="border-radius: 16px">
         <div class="card-body" style="border-radius: 12px">
-        <h5 class="card-title mb-2 font-color d-flex align-items-center justify-content-center">
+          <h5
+            class="card-title mb-2 font-color d-flex align-items-center justify-content-center"
+          >
             Platinum Sponsor
             <img
-                src="public/platinum.png"
-                alt="Platinum Medal"
-                style="height: 38px; width: 38px; margin-left: 8px;"
+              src="public/platinum.png"
+              alt="Platinum Medal"
+              style="height: 38px; width: 38px; margin-left: 8px"
             />
-        </h5>
+          </h5>
           <a href="https://www.bray.com/" target="_blank">
             <img
               src="https://tamuengineeringprojectshowcase.secure-platform.com/file/568/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjgsImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.3-snSimhhj4lWifIo8vOFZeT5CNQ51qZuF7rK9n1oXQ"
@@ -247,14 +286,16 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100 shadow" style="border-radius: 16px">
         <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-2 font-color d-flex align-items-center justify-content-center">
+          <h5
+            class="card-title mb-2 font-color d-flex align-items-center justify-content-center"
+          >
             Gold Sponsor
             <img
-                src="public/gold.png"
-                alt="Gold Medal"
-                style="height: 38px; width: 38px; margin-left: 8px;"
+              src="public/gold.png"
+              alt="Gold Medal"
+              style="height: 38px; width: 38px; margin-left: 8px"
             />
-        </h5>
+          </h5>
           <a href="https://www.caterpillar.com/" target="_blank">
             <img
               src="https://tamuengineeringprojectshowcase.secure-platform.com/file/569/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjksImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.MxFS_jm9DbTd4wbtcHZrEIUaMAWqNssWNLiRkSD6nMs"
@@ -316,14 +357,16 @@
     <div class="col-md-4 mb-3">
       <div class="card h-100 shadow" style="border-radius: 16px">
         <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-2 font-color d-flex align-items-center justify-content-center">
+          <h5
+            class="card-title mb-2 font-color d-flex align-items-center justify-content-center"
+          >
             Silver Sponsor
             <img
-                src="public/silver.png"
-                alt="Silver Medal"
-                style="height: 38px; width: 38px; margin-left: 8px;"
+              src="public/silver.png"
+              alt="Silver Medal"
+              style="height: 38px; width: 38px; margin-left: 8px"
             />
-        </h5>
+          </h5>
           <a href="https://www.bakerhughes.com/" target="_blank">
             <img
               src="https://tamueps.secure-platform.com/file/2029/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDI5LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.dDFSZIPPHMWflHuai0T3nPchaf2aXH556CtWSICMZFI?Baker_Hughes_logo.svg.png"
@@ -348,7 +391,8 @@
         ></strong
       ><img
         src="https://tamueps.secure-platform.com/file/2032/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDMyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.J54SaewjCN_ZjJEMkw4dVupHKZ3nHvZcUD0NRJV4LjA?Sponsorship%20Opportunities%20%28Landscape%29.png"
-        style="height: 759px; width: 1350px"
+        class="img-fluid"
+        style="max-width: 100%; height: auto"
       />
     </p>
   </div>

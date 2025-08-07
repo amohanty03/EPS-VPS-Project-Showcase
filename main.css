@@ -698,6 +698,8 @@ nav.main-nav div.main-nav__mobile-toggle button:hover span.hamburger-icon span {
 }
 
 header.main-header {
+  position: relative;
+  z-index: 10;
   background: #500000;
 }
 
@@ -1184,7 +1186,7 @@ header.main-header .main-nav__mobile-toggle button:hover {
 .menu-item .submenu {
   position: absolute;
   top: 100%;
-  left: -35px; /* Move submenu 20px to the left */
+  /* left: -35px; */
   min-width: 260px;
   z-index: 1000;
   background: #fff;
@@ -1207,22 +1209,25 @@ header.main-header .main-nav__mobile-toggle button:hover {
     position: relative !important;
   }
   header.main-header .main-header__wrapper nav.main-nav .main-nav__links.open {
-    display: block !important;
+    display: flex !important;
     flex-direction: column;
-    background-color: #500000 !important; /* match header */
-    position: absolute !important; /* drop down */
-    top: 100% !important; /* right under the header */
+    background-color: #500000 !important;
+    position: absolute !important;
+    top: 100% !important;
     left: 0 !important;
     right: 0 !important;
-    padding: 1rem 0 !important; /* space around links */
-    gap: 0.5rem !important; /* space between items */
+    padding: 1rem 0 !important;
+    gap: 0.5rem !important;
+    z-index: 9999 !important;
+    background-color: #500000 !important;
+    min-height: max-content !important;
   }
   header.main-header
     .main-header__wrapper
     nav.main-nav
     .main-nav__links.open
     button {
-    color: #fff !important; /* contrast on dark bg */
+    color: #fff !important;
     text-align: center !important;
   }
 }
@@ -1494,6 +1499,9 @@ ul.no-bullets {
     font-size: inherit;
     font-weight: bold;
   }
+  .oswald-heading {
+    text-align: center !important;
+  }
 }
 /* SM - 640px and up */
 @media (min-width: 640px) {
@@ -1566,6 +1574,9 @@ ul.no-bullets {
   .sponsor-capstone li {
     font-size: inherit;
     font-weight: bold;
+  }
+  .oswald-heading {
+    text-align: center !important;
   }
 }
 /* MD - 768px and up */
@@ -1646,6 +1657,9 @@ ul.no-bullets {
     font-size: inherit;
     font-weight: bold;
   }
+  .oswald-heading {
+    text-align: center !important;
+  }
 }
 /* LG - 1024px and up */
 @media (min-width: 1024px) {
@@ -1709,6 +1723,12 @@ ul.no-bullets {
   .sponsor-capstone li {
     font-size: inherit;
     font-weight: bold;
+  }
+  .menu-item.has-submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 }
 /* XL - 1280px and up */
@@ -1776,5 +1796,11 @@ ul.no-bullets {
   .sponsor-capstone li {
     font-size: inherit;
     font-weight: bold;
+  }
+  .menu-item.has-submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 }

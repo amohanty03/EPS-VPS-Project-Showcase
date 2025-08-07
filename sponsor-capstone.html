@@ -47,9 +47,26 @@
     <nav aria-label="Navigation Bar" class="main-nav">
       <div class="main-nav__mobile-toggle">
         <button class="menu-toggle">
-          Menu<span class="hamburger-icon">…</span>
+          Menu
+          <div class="hamburger" style="margin-left: 6px" id="hamburger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         </button>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const btn = document.querySelector(".menu-toggle");
+          const links = document.querySelector(".main-nav__links");
+          const hamburger = document.getElementById("hamburger");
+          btn.addEventListener("click", () => {
+            links.classList.toggle("open");
+            hamburger.classList.toggle("change");
+          });
+        });
+      </script>
+
       <div class="main-nav__links">
         <button aria-controls="home" onclick="window.location.href='main.html'">
           Home
@@ -68,23 +85,23 @@
           Sponsor a Capstone
         </button>
 
-        <div
-          class="menu-item has-submenu d-flex justify-content-center align-items-center"
-          style="height: 100%"
-        >
+        <div class="menu-item has-submenu">
           <button
+            type="button"
             aria-haspopup="true"
             aria-controls="submenu-sponsorship"
             aria-expanded="false"
-            class="flex items-center gap-1 w-100 h-100"
-            style="margin: 0 auto; display: block; height: 100%"
+            class="flex items-center w-100 h-100"
+            style="height: 100%"
           >
             Past Events
             <i
               class="fas fa-angle-double-right transition-transform duration-200"
+              style="margin-left: 4px"
               aria-hidden="true"
             ></i>
           </button>
+
           <script>
             document.addEventListener("DOMContentLoaded", function () {
               const container = document.querySelector(".has-submenu");
@@ -341,7 +358,10 @@
   Engineering Project Showcase events (fall or spring) as a judge to see
   hundreds of examples. Submit your project topics by:
 </p>
-<div class="table-responsive" style="max-width: 500px; margin: 24px auto; padding: 12px;">
+<div
+  class="table-responsive"
+  style="max-width: 500px; margin: 24px auto; padding: 12px"
+>
   <table class="table table-bordered custom-table-radius">
     <thead style="background: #500000 !important">
       <tr>
