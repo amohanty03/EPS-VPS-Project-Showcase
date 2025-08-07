@@ -47,14 +47,41 @@
     <nav aria-label="Navigation Bar" class="main-nav">
       <div class="main-nav__mobile-toggle">
         <button class="menu-toggle">
-          Menu<span class="hamburger-icon">…</span>
+          Menu
+          <div class="hamburger" id="hamburger">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
         </button>
       </div>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const btn = document.querySelector(".menu-toggle");
+          const links = document.querySelector(".main-nav__links");
+          const hamburger = document.getElementById("hamburger");
+          btn.addEventListener("click", () => {
+            links.classList.toggle("open");
+            hamburger.classList.toggle("change");
+          });
+        });
+      </script>
+
       <div class="main-nav__links">
-        <button aria-controls="home" onclick="window.location.href='main.html'">Home</button>
+        <button aria-controls="home" onclick="window.location.href='main.html'">
+          Home
+        </button>
         <button aria-controls="judge-registration">Judge Registration</button>
-        <button aria-controls="sponsor-award" onclick="window.location.href='sponsors.html'">Sponsors</button>
-        <button aria-controls="sponsor-capstone" onclick="window.location.href='sponsor-capstone.html'">
+        <button
+          aria-controls="sponsor-award"
+          onclick="window.location.href='sponsors.html'"
+        >
+          Sponsors
+        </button>
+        <button
+          aria-controls="sponsor-capstone"
+          onclick="window.location.href='sponsor-capstone.html'"
+        >
           Sponsor a Capstone
         </button>
 
@@ -75,6 +102,7 @@
               aria-hidden="true"
             ></i>
           </button>
+
           <script>
             document.addEventListener("DOMContentLoaded", function () {
               const container = document.querySelector(".has-submenu");
@@ -141,6 +169,8 @@
               <a
                 href="https://drive.google.com/file/d/18akhRQkECU9UAFltHKDNYBAQgVWn-yc2/view?usp=sharing"
                 role="menu-item"
+                target="_blank"
+                rel="noopener"
                 >Winning Teams
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
@@ -149,7 +179,11 @@
               ></a>
             </li>
             <li>
-              <a href="#levels" role="menu-item"
+              <a
+                href="https://drive.google.com/file/d/18ZZHr86GEw4rjhh05eCGd9MP4l7pdCAO/view?usp=sharing"
+                role="menu-item"
+                target="_blank"
+                rel="noopener"
                 >Award Ceremony
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
@@ -161,6 +195,8 @@
               <a
                 href="https://drive.google.com/drive/folders/1ZQpKymN8Um3xbxABeRI9YwdWv6Kf7G_V"
                 role="menu-item"
+                target="_blank"
+                rel="noopener"
                 >Gallery
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
@@ -223,7 +259,7 @@
   window.addEventListener("resize", updateScreenSizeIndicator);
   updateScreenSizeIndicator();
 </script>
-<div class="showcase-goals-sponsorship-container container">
+<div class="showcase-goals-sponsorship-container container-fluid">
   <div
     class="showcase-goals-sponsorship row align-items-center mx-auto my-4"
     style="max-width: 100%; width: 100%"
@@ -240,8 +276,27 @@
       />
     </div>
     <div class="col" style="min-width: 0; text-align: left; padding-right: 0">
-      <h2 style="color: rgb(80, 0, 0)">SHOWCASE GOALS</h2>
-      <h2 style="color: rgb(80, 0, 0)">/////</h2>
+      <p style="text-align: left" class="oswald-heading font-color">
+        <span class="header-underline">About Us</span>
+      </p>
+      <p>
+        We develop strategic partnerships to empower students with
+        transformative, career-defining opportunities while providing industry
+        partners with direct access to top engineering talent, fresh
+        perspectives, and innovative solutions. Through sponsored capstone
+        projects, organizations can collaborate with teams of 4-6 senior
+        engineering students over one or two semesters to address real-world
+        challenges, gain valuable insights, and evaluate potential future hires.
+        Our annual Engineering Project Showcase highlights the work of over
+        1,500 students, offering a platform to explore cutting-edge solutions,
+        identify emerging talent, and spark meaningful collaborations.
+        Additional engagement opportunities include sponsoring undergraduate
+        research, mentoring programs, sophomore-targeted initiatives, and
+        competitions.
+      </p>
+      <p style="text-align: left" class="oswald-heading font-color">
+        <span class="header-underline">Showcase Goals</span>
+      </p>
       <p>
         <strong class="font-color">Industry Engagement:</strong> Raise awareness
         about the value of sponsored capstone projects to industry and others.
@@ -256,7 +311,7 @@
         <strong class="font-color">Student Innovation:</strong> Celebrate the
         innovative accomplishments of engineering students.
       </p>
-      <h2 style="color: rgb(80, 0, 0)">SPONSORSHIP OPPORTUNITIES</h2>
+      <!-- <h2 style="color: rgb(80, 0, 0)">SPONSORSHIP OPPORTUNITIES</h2>
       <h2 style="color: rgb(80, 0, 0)">/////</h2>
       <p>
         The Engineering Project Showcase offers a great opportunity for industry
@@ -264,7 +319,7 @@
         innovation, and recognize top teams within majors of interest to their
         organization. Join us and celebrate the innovators of tomorrow!
         Sponsorship opportunities start at $2.5k.
-      </p>
+      </p> -->
     </div>
   </div>
 </div>
@@ -340,7 +395,7 @@
 
 <hr />
 <p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline"> STUDENT TEAM PARTICIPANTS </span>
+  <span class="header-underline"> Student Team Participants </span>
 </p>
 <p style="text-align: left; font-size: 20px" class="team-participants">
   The Engineering Project Showcase is a celebration of the innovative
@@ -361,7 +416,7 @@
 
 <hr />
 <p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline">INDUSTRY JUDGES</span>
+  <span class="header-underline">Industry Judges</span>
 </p>
 <p style="text-align: left; font-size: 20px" class="industry-judges">
   Industry representatives are invited to join us in-person as judges. See the
@@ -371,11 +426,11 @@
   capstone projects to get value for their organization.
 </p>
 
+<hr style="margin-top: 2rem; margin-bottom: 2rem" />
 <div>
-  <hr />
   <p style="text-align: center" class="oswald-heading font-color">
     <span class="header-underline"
-      >ORGANIZATIONS REPRESENTED BY PAST JUDGES</span
+      >Organizations Represented By Past Judges</span
     >
   </p>
   <div
@@ -398,157 +453,6 @@
     ></iframe>
   </div>
 </div>
-
-<!-- <hr style="margin-top: 2rem; margin-bottom: 2rem" />
-<p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline"> SHOWCASE SPONSORS </span>
-</p>
-<div class="container my-4">
-  <div class="row justify-content-center">
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-2 font-color">Platinum Sponsor</h5>
-          <a href="https://www.bray.com/" target="_blank">
-            <img
-              src="https://tamuengineeringprojectshowcase.secure-platform.com/file/568/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjgsImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.3-snSimhhj4lWifIo8vOFZeT5CNQ51qZuF7rK9n1oXQ"
-              alt="Platinum Sponsor Logo Bray"
-              class="img-fluid mt-4"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-          <a
-            href="https://www.samsung.com/us/about-us/leadership-and-mission/"
-            target="_blank"
-          >
-            <img
-              src="https://tamuvps.secure-platform.com/file/1271/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxMjcxLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.Ne-9ZoKlF7-SMBwIGLJrUyVM8cp68ha9LdeYySD8EXk?Samsung_wordmark.svg.png"
-              alt="Platinum Sponsor Logo Samsung"
-              class="img-fluid mt-4"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-          <a href="https://www.tsmc.com/english" target="_blank">
-            <img
-              src="https://tamueps.secure-platform.com/file/2092/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDkyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.ckzMda9fMNEi291zbKzb2HZ-B03ULvOPmTzTsnveGGI?TSMC.jpg"
-              alt="Platinum Sponsor Logo TSMC"
-              class="img-fluid mt-4"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-4 font-color">Gold Sponsor</h5>
-          <a href="https://www.caterpillar.com/" target="_blank">
-            <img
-              src="https://tamuengineeringprojectshowcase.secure-platform.com/file/569/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjo1NjksImFsbG93Tm90U2lnbmVkVXJsIjoiVHJ1ZSIsImlnbm9yZU9wZW5XYXRlck1lZGlhVXJsR2VuZXJhdGlvbk1vZGUiOiJGYWxzZSIsImZvcmNlRG93bmxvYWQiOiJGYWxzZSJ9.MxFS_jm9DbTd4wbtcHZrEIUaMAWqNssWNLiRkSD6nMs"
-              alt="Gold Sponsor Logo Caterpillar"
-              class="img-fluid"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-          <a href="https://noblereachfoundation.org/" target="_blank">
-            <img
-              src="https://tamuvps.secure-platform.com/file/1793/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzkzLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.XNiJMQs5spS1j_vKRXyWSW9itIxHv_zerNci-BbZ6N4?NobleReach-Logo-Color_small.png"
-              alt="Gold Sponsor Logo NobleReach"
-              class="img-fluid"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-          <a href="https://www.megger.com/en" target="_blank">
-            <img
-              src="https://tamueps.secure-platform.com/file/2190/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMTkwLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.Gs1CgTikxfX2-Gd6NsGkZfLDOde_0e5Jna3rHH7tdpk?megger.png"
-              alt="Platinum Sponsor Logo Megger"
-              class="img-fluid"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-          <a
-            href="https://engineering.tamu.edu/student-life/eep/index.html"
-            target="_blank"
-          >
-            <img
-              src="https://tamueps.secure-platform.com/file/2192/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMTkyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.ltlgUtR4Qoa8wkWe9MgZgF7Qc03viT4HWOsQcNIcREc"
-              alt="Platinum Sponsor Logo Meloy"
-              class="img-fluid"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-4 font-color">Silver Sponsor</h5>
-          <a href="https://www.bakerhughes.com/" target="_blank">
-            <img
-              src="https://tamueps.secure-platform.com/file/2029/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDI5LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.dDFSZIPPHMWflHuai0T3nPchaf2aXH556CtWSICMZFI?Baker_Hughes_logo.svg.png"
-              alt="Silver Sponsor Logo Baker Hughes"
-              class="img-fluid"
-              style="
-                max-height: 120px;
-                object-fit: contain;
-                display: block;
-                margin: 0 auto;
-              "
-            />
-          </a>
-        </div>
-      </div>
-    </div>
-    <p style="text-align: center">
-      <strong
-        ><span style="font-size: 18px"
-          >If interested in being a sponsor, please see the flyer below for
-          those opportunities!</span
-        ></strong
-      ><img
-        src="https://tamueps.secure-platform.com/file/2032/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMDMyLCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.J54SaewjCN_ZjJEMkw4dVupHKZ3nHvZcUD0NRJV4LjA?Sponsorship%20Opportunities%20%28Landscape%29.png"
-        style="height: 759px; width: 1350px"
-      />
-    </p>
-  </div>
-</div> -->
 
 <hr style="margin-top: 2rem; margin-bottom: 2rem" />
 <p style="text-align: center" class="oswald-heading font-color">
@@ -598,54 +502,12 @@
         </div>
       </div>
     </div>
-    <!-- <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
 
-<hr />
+<hr style="margin-top: 2rem; margin-bottom: 2rem" />
 <p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline">ENTRIES FROM PAST EVENTS</span>
+  <span class="header-underline">Entries From Past Events</span>
 </p>
 <div class="container my-4">
   <div class="row justify-content-center mb-3">
