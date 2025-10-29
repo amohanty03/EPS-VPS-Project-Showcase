@@ -35,6 +35,96 @@
 />
 
 <link href="main.css" rel="stylesheet" type="text/css" />
+<div
+  id="screen-size"
+  style="
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: monospace;
+    z-index: 9999;
+  "
+></div>
+
+<script>
+  function getBootstrapBreakpoint() {
+    const width = window.innerWidth;
+    if (width < 576) return "xs (base)";
+    if (width < 768) return "sm";
+    if (width < 992) return "md";
+    if (width < 1200) return "lg";
+    if (width < 1400) return "xl";
+    return "xxl";
+  }
+
+  function updateScreenSize() {
+    const el = document.getElementById("screen-size");
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const bp = getBootstrapBreakpoint();
+    el.textContent = `${bp} | ${width} x ${height}`;
+  }
+
+  window.addEventListener("resize", updateScreenSize);
+  updateScreenSize(); // run on load
+</script>
+<style type="text/css">
+  div#content.core {
+    max-width: 100%;
+    padding: 0;
+  }
+  .content-right {
+    margin: 0;
+  }
+
+  .image-hover-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .image-hover-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  .read-more-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #500000;
+    color: white !important;
+    padding: 10px 20px;
+    text-decoration: none !important;
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    border: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, color 0.3s ease;
+  }
+
+  .image-hover-container:hover img {
+    opacity: 0.7;
+  }
+
+  .image-hover-container:hover .read-more-button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .read-more-button:hover {
+    color: #fce300 !important;
+  }
+</style>
 
 <header class="main-header">
   <div class="main-header__wrapper">
@@ -170,7 +260,7 @@
                 role="menu-item"
                 target="_blank"
                 rel="noopener"
-                >Winning Teams
+                >EPS Booklet
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -183,7 +273,7 @@
                 role="menu-item"
                 target="_blank"
                 rel="noopener"
-                >Award Ceremony
+                >VPS Video Gallery
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -196,7 +286,7 @@
                 role="menu-item"
                 target="_blank"
                 rel="noopener"
-                >Gallery
+                >EPS Event Gallery
                 <i
                   class="fas fa-angle-right transition-transform duration-200"
                   aria-hidden="true"
@@ -210,350 +300,357 @@
   </div>
 </header>
 
-<div style="text-align: center">
-  <div class="banner-container">
-    <img
-      src="public/header-banner.png"
-      alt="Engineering Project Showcase Banner"
-      class="banner-img"
-    />
-    />
-    <div class="banner-overlay"></div>
-    <h1 class="banner-date oswald-heading">APRIL 24TH, 2026</h1>
-  </div>
-  <div class="showcase-title-wrap">
-    <h1 class="showcase-title oswald-heading">ENGINEERING PROJECT SHOWCASE</h1>
-  </div>
-</div>
-<!-- Responsive screen size indicator (shows current breakpoint) -->
-<style>
-  .screen-size-indicator {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background: #000;
-    color: #fff;
-    font-size: 12px;
-    padding: 4px 8px;
-    z-index: 9999;
-    border-top-right-radius: 6px;
-    font-family: Arial, sans-serif;
-    pointer-events: none;
-  }
-</style>
-<div id="screenSizeIndicator" class="screen-size-indicator"></div>
-<script>
-  function getBreakpoint() {
-    const w = window.innerWidth;
-    if (w < 640) return "Base (<640px)";
-    if (w < 768) return "sm (640px–767px)";
-    if (w < 1024) return "md (768px–1023px)";
-    if (w < 1280) return "lg (1024px–1279px)";
-    return "xl (1280px+)";
-  }
-  function updateScreenSizeIndicator() {
-    document.getElementById("screenSizeIndicator").textContent =
-      getBreakpoint();
-  }
-  window.addEventListener("resize", updateScreenSizeIndicator);
-  updateScreenSizeIndicator();
-</script>
-<div class="showcase-goals-sponsorship-container container-fluid">
-  <div
-    class="showcase-goals-sponsorship row align-items-center mx-auto my-4"
-    style="max-width: 100%; width: 100%"
-  >
-    <div
-      class="col justify-content-center align-items-center mb-4 mb-md-0"
-      style="min-width: 0"
-    >
+<body>
+  <div style="text-align: center">
+    <div class="banner-container">
       <img
-        src="https://tamueps.secure-platform.com/file/2385/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMzg1LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.axycid6_mYe5-7_jGwMutgp0J-rMiPJdz3gHnTbqO6c?2026%20Save%20The%20Date.jpg"
-        class="img-fluid"
-        style="max-height: 400px; width: 100%; object-fit: contain"
-        alt="2026 Save The Date"
+        src="public/header-banner.png"
+        alt="Engineering Project Showcase Banner"
+        class="banner-img"
       />
+      <div class="banner-overlay"></div>
+      <h1 class="banner-date oswald-heading">APRIL 24TH, 2026</h1>
+      <h2 class="banner-subheading oswald-heading">
+        <a href="https://maps.app.goo.gl/VnTng6NCNoqYqqT4A" target="_blank">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          Zachry Engineering Education Complex
+        </a>
+      </h2>
     </div>
-    <div class="col" style="min-width: 0; text-align: left; padding-right: 0">
-      <p style="text-align: left" class="oswald-heading font-color">
-        <span class="header-underline">About Us</span>
-      </p>
-      <p style="text-align: justify">
-        We develop strategic partnerships to empower students with
-        transformative, career-defining opportunities while providing industry
-        partners with direct access to top engineering talent, fresh
-        perspectives, and innovative solutions. Through sponsored capstone
-        projects, organizations can collaborate with teams of 4-6 senior
-        engineering students over one or two semesters to address real-world
-        challenges, gain valuable insights, and evaluate potential future hires.
-        Our annual Engineering Project Showcase highlights the work of over
-        1,500 students, offering a platform to explore cutting-edge solutions,
-        identify emerging talent, and spark meaningful collaborations.
-        Additional engagement opportunities include sponsoring undergraduate
-        research, mentoring programs, sophomore-targeted initiatives, and
-        competitions.
-      </p>
-      <p style="text-align: left" class="oswald-heading font-color">
-        <span class="header-underline">Showcase Goals</span>
-      </p>
-      <p style="text-align: justify">
-        <strong class="font-color">Industry Engagement:</strong> Raise awareness
-        about the value of sponsored capstone projects to industry and others.
-        <br />
-        <strong class="font-color">Retention:</strong> Support retention efforts
-        by showing freshman and sophomores examples of real-world capstone
-        projects.
-        <br />
-        <strong class="font-color">Recruitment:</strong> Raise STEM awareness
-        with prospective students and teachers.
-        <br />
-        <strong class="font-color">Student Innovation:</strong> Celebrate the
-        innovative accomplishments of engineering students.
-      </p>
-      <!-- <h2 style="color: rgb(80, 0, 0)">SPONSORSHIP OPPORTUNITIES</h2>
-      <h2 style="color: rgb(80, 0, 0)">/////</h2>
-      <p>
-        The Engineering Project Showcase offers a great opportunity for industry
-        to raise awareness about their organization, support engineering
-        innovation, and recognize top teams within majors of interest to their
-        organization. Join us and celebrate the innovators of tomorrow!
-        Sponsorship opportunities start at $2.5k.
-      </p> -->
+    <div class="showcase-title-wrap">
+      <h1 class="showcase-title oswald-heading">
+        ENGINEERING PROJECT SHOWCASE
+      </h1>
     </div>
   </div>
-</div>
 
-<div
-  style="
-    background: #500000;
-    min-height: 140px;
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  "
-  class="showcase-contact-info-container container"
->
+  <div class="showcase-goals-sponsorship-container container-fluid">
+    <div
+      class="showcase-goals-sponsorship row align-items-center mx-auto my-4"
+      style="max-width: 100%; width: 100%"
+    >
+      <div
+        class="col-md-4 d-flex justify-content-center align-items-center mb-4 mb-md-0"
+        style="min-width: 0"
+      >
+      <div class="image-hover-container">
+        <img
+          src="https://tamueps.secure-platform.com/file/2237/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoyMjM3LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.3vA7NUIvOTmV1KupLZUMXEDdGLxh7YbllAvxkil8AlM?2025%20Engineering%20Project%20Showcase%20Cover.jpg"
+          class="img-fluid"
+          style="max-height: 400px; width: 100%; object-fit: contain"
+          alt="EPS Booklet"
+        />
+        <a href="google.com" class="read-more-button">Read More</a>
+        </div>
+      </div>
+      <div
+        class="col-md-8"
+        style="min-width: 0; text-align: left; padding-right: 0"
+      >
+        <p style="text-align: left" class="oswald-heading font-color">
+          <span class="header-underline">About EPS</span>
+        </p>
+        <p style="text-align: justify">
+          <strong class="font-color">Judge the Future of Engineering</strong
+          ><br />
+          See innovation in action at the
+          <strong class="font-color">Engineering Project Showcase</strong>,
+          where over 1,500 senior engineering students unveil solutions to
+          real-world industry challenges. As a
+          <strong class="font-color">Showcase Judge</strong>, you'll get a
+          front-row seat to fresh ideas, discover top emerging talent, and play
+          a key role in recognizing the next generation of engineers.
+        </p>
+        <p style="text-align: left" class="oswald-heading font-color">
+          <span class="header-underline">Showcase Goals</span>
+        </p>
+        <p style="text-align: justify">
+          The Engineering Project Showcase is designed to strengthen industry
+          connections, inspire future engineers, and celebrate the innovation of
+          our students.<br />
+          <strong class="font-color">Student Innovation:</strong> Recognize and
+          celebrate the creativity, technical expertise, and problem-solving
+          achievements of Texas A&M engineering students.
+          <br />
+          <strong class="font-color">Industry Engagement:</strong> Demonstrate
+          the impact of industry-sponsored capstone projects and strengthen
+          connections between companies and engineering talent.
+          <br />
+          <strong class="font-color">Retention:</strong> Inspire freshmen and
+          sophomores by highlighting real-world projects that show the value of
+          staying on the engineering pathway.
+          <br />
+          <strong class="font-color">Recruitment:</strong> Spark interest in
+          STEM among prospective students and educators by showcasing the
+          breadth and impact of engineering solutions.
+        </p>
+      </div>
+    </div>
+  </div>
   <div
     style="
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
+      background: #500000;
+      min-height: 140px;
+      width: 100%;
+      max-width: 100%;
       display: flex;
-      justify-content: center;
       align-items: center;
-      font-family: Open Sans, sans-serif;
-      color: #500000;
-      flex-wrap: wrap;
-      width: wrap-content;
-      max-width: 90%;
+      justify-content: center;
     "
-    class="showcase-contact-info-subcontainer row"
+    class="showcase-contact-info-container container"
   >
-    <div class="col" style="flex: 1; min-width: 190px">
-      <p
-        style="font-size: 20px; font-weight: 700; margin: 0; text-align: center"
-        class="showcase-contact-info-text"
-      >
-        For additional information, please contact us at:
+    <div
+      style="
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Open Sans, sans-serif;
+        color: #500000;
+        flex-wrap: wrap;
+        width: wrap-content;
+        max-width: 90%;
+      "
+      class="showcase-contact-info-subcontainer row"
+    >
+      <div class="col" style="flex: 1; min-width: 190px">
+        <p
+          style="
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+            text-align: center;
+          "
+          class="showcase-contact-info-text"
+        >
+          For additional information, please contact Industry and Nonprofit
+          Partnerships (INP) at:
+        </p>
+      </div>
+      <div class="col text-center" style="flex: 1; min-width: 190px">
+        <span
+          class="showcase-contact-info-email-container"
+        >
+          <a
+            href="mailto:inp@tamu.edu"
+            style="
+              color: #fff;
+              transition: color 0.2s;
+              font-size: 22px;
+              text-decoration: underline;
+            "
+            onmouseover="this.style.color='#FFD600'"
+            onmouseout="this.style.color='#fff'"
+            class="showcase-contact-info-email"
+            >inp@tamu.edu</a
+          >
+        </span>
+      </div>
+    </div>
+  </div>
+
+<div class="showcase-goals-sponsorship-container" style="max-width: 1500px; margin: 0 auto;">
+  <div class="showcase-goals-sponsorship row align-items-start mx-auto my-4" style="width: 100%;">
+    <!-- Text -->
+    <div class="col-md-8" style="min-width: 0; text-align: left; padding-right: 1rem">
+      <p class="oswald-heading font-color text-start">
+        <span class="header-underline">Student Team Participants</span>
+      </p>
+      <p class="team-participants text-start" style="font-size: 20px">
+        <strong class="font-color">The Engineering Project Showcase</strong> is Texas A&amp;M University's
+        premier event celebrating the innovation and achievements of senior engineering students. More than
+        1,500 students from across multiple engineering disciplines present their
+        <strong class="font-color">capstone design projects</strong>, developed to address real-world
+        challenges with creativity, technical expertise, and problem-solving skills. Participants represent a
+        wide range of majors&mdash;including
+        <strong class="font-color"> AERO, BAEN, BMEN, CHEN, CSCE, ECEN, ESET, ISEN, ITDE, MEEN, MMET, MSEN, MXET </strong>
+        and more&mdash;demonstrating the breadth of engineering talent at Texas A&amp;M. The Showcase not only
+        highlights student accomplishment but also provides a platform for industry, faculty, and the community
+        to engage with the next generation of engineering leaders.
+      </p>
+
+      <p class="oswald-heading font-color text-start">
+        <span class="header-underline">Industry Judges</span>
+      </p>
+      <p class="industry-judges text-start" style="font-size: 20px">
+        <strong class="font-color">Industry representatives are invited to join us in person as Showcase Judges.</strong>
+        Experience firsthand the innovative approaches student teams use to solve real-world challenges,
+        provide valuable feedback that shapes their professional growth, and help us recognize this year's top
+        projects. Serving as a judge also offers a unique opportunity to see how organizations leverage capstone
+        projects to generate fresh insights, explore solutions, and connect with emerging engineering talent.
       </p>
     </div>
-    <div class="col text-center" style="flex: 1; min-width: 190px">
-      <span
-        style="
-          display: block;
-          width: 100%;
-          height: 100%;
-          border: 2px solid #500000;
-          border-radius: 6px;
-          padding: 10px 20px;
-          color: #500000;
-          background: #500000;
-          box-sizing: border-box;
-        "
-        class="showcase-contact-info-email-container"
-      >
+
+    <!-- Image -->
+    <div class="col-md-4 d-flex justify-content-center align-items-start mb-4 mb-md-0" style="min-width: 0">
+      <div class="image-hover-container">
+        <img
+          alt="EPS Guidebook"
+          class="img-fluid"
+          src="https://public.openwatercdn.com/a122949f-ff15-48cb-83fa-599bc2f9fa21/553cebdd-f0d6-41e5-82f0-5d07365baead.png"
+          style="max-height: 280px; object-fit: contain; width: 100%;"
+        />
         <a
-          href="mailto:inp@tamu.edu"
-          style="
-            color: #fff;
-            transition: color 0.2s;
-            font-size: 22px;
-            text-decoration: underline;
-          "
-          onmouseover="this.style.color='#FFD600'"
-          onmouseout="this.style.color='#fff'"
-          class="showcase-contact-info-email"
-          >inp@tamu.edu</a
+          class="read-more-button"
+          href="https://drive.google.com/file/d/1KDCkUpIQWkYBQ-M3kTsVwZtZZeeMkGXB/view?usp=sharing"
+          target="_blank"
         >
-      </span>
+          Read More
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
-<hr />
-<p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline"> Student Team Participants </span>
-</p>
-<p style="text-align: left; font-size: 20px" class="team-participants">
-  The Engineering Project Showcase is a celebration of the innovative
-  accomplishments of engineering students at Texas A&M University. Students from
-  various engineering majors participate in this event, showcasing their senior
-  capstone design projects. The event provides an opportunity for students to
-  demonstrate their skills, creativity, and problem-solving abilities in
-  real-world applications. The Engineering Project Showcase event is designed to
-  celebrate the amazing work of more than 1,000 engineering students in senior
-  capstone design courses. Students represent several engineering majors
-  including:
-  <strong class="font-color"
-    >AERO, BAEN, BMEN, CHEN, CSCE, ECEN, ESET, ISEN, ITDE, MEEN, MMET, MSEN,
-    MXET</strong
-  >
-  and others.
-</p>
 
-<hr />
-<p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline">Industry Judges</span>
-</p>
-<p style="text-align: left; font-size: 20px" class="industry-judges">
-  Industry representatives are invited to join us in-person as judges. See the
-  innovative approaches student teams have utilized to address real-world
-  problems, provide them valuable feedback, and helps us recognize this year's
-  top teams. Furthermore, observe examples of how industry and others leverage
-  capstone projects to get value for their organization.
-</p>
 
-<hr style="margin-top: 2rem; margin-bottom: 2rem" />
-<div>
+  <hr style="margin-top: 2rem; margin-bottom: 2rem" />
+  <div>
+    <p style="text-align: center" class="oswald-heading font-color">
+      <span class="header-underline"
+        >Organizations Represented By Past Judges</span
+      >
+    </p>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 mb-3">
+          <div
+            class="ratio ratio-16x9"
+            style="max-width: 700px; margin: 0 auto; padding: 0.5rem"
+          >
+            <iframe
+              src="https://www.youtube.com/embed/ins52cy6WJk?si=hbfsjE4ZX5Z-38DA"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              style="border: 0"
+            ></iframe>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <div
+            class="ratio ratio-16x9"
+            style="max-width: 700px; margin: 0 auto; padding: 0.5rem"
+          >
+            <img
+              src="public/placeholder.webp"
+              alt="Organizations Represented"
+              class="img-fluid"
+              style="border: 0; object-fit: cover; width: 100%; height: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr style="margin-top: 2rem; margin-bottom: 2rem" />
   <p style="text-align: center" class="oswald-heading font-color">
-    <span class="header-underline"
-      >Organizations Represented By Past Judges</span
-    >
+    <span class="header-underline">Judge Testimonials</span>
   </p>
-  <div
-    class="ratio ratio-16x9"
-    style="
-      max-width: 700px;
-      margin: 0 auto;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
-      padding-bottom: 0.5rem;
-    "
-  >
-    <iframe
-      src="https://www.youtube.com/embed/ins52cy6WJk?si=hbfsjE4ZX5Z-38DA"
-      title="YouTube video player"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-      style="border: 0"
-    ></iframe>
+  <div class="container my-4">
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow" style="border-radius: 16px">
+          <div class="card-body" style="border-radius: 12px">
+            <h5 class="card-title mb-1 font-color">Jane Doe</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
+            <p class="card-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
+              rerum quos rem facilis temporibus sint illo consequatur pariatur
+              nobis non repellat odio nisi vitae sunt perferendis quod,
+              assumenda at officia!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow" style="border-radius: 16px">
+          <div class="card-body" style="border-radius: 12px">
+            <h5 class="card-title mb-1 font-color">Jane Doe</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
+            <p class="card-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
+              rerum quos rem facilis temporibus sint illo consequatur pariatur
+              nobis non repellat odio nisi vitae sunt perferendis quod,
+              assumenda at officia!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100 shadow" style="border-radius: 16px">
+          <div class="card-body" style="border-radius: 12px">
+            <h5 class="card-title mb-1 font-color">Jane Doe</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
+            <p class="card-text">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
+              rerum quos rem facilis temporibus sint illo consequatur pariatur
+              nobis non repellat odio nisi vitae sunt perferendis quod,
+              assumenda at officia!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<hr style="margin-top: 2rem; margin-bottom: 2rem" />
-<p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline">JUDGE TESTIMONIALS</span>
-</p>
-<div class="container my-4">
-  <div class="row justify-content-center">
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
+  <hr style="margin-top: 2rem; margin-bottom: 2rem" />
+  <p style="text-align: center" class="oswald-heading font-color">
+    <span class="header-underline">Entries From Past Events</span>
+  </p>
+  <div class="container my-4">
+    <div class="row justify-content-center mb-3">
+      <div
+        class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+      >
+        <img
+          src="https://tamuvps.secure-platform.com/file/1755/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU1LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.LD_fNTABhj7dRUSQpOV7Lfuxum0Wz4DF3FpQQCcY9FM?quickSocial_004.jpg"
+          class="img-fluid rounded shadow"
+          alt="Past Event Entry 1"
+          style="max-width: 400px; max-height: 267px; object-fit: cover"
+        />
+      </div>
+      <div
+        class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+      >
+        <img
+          src="https://tamuvps.secure-platform.com/file/1756/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU2LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.XBpamVHfXeEIzRBKOmOtOXp6MRLweGYgoNvKHEF6avk?quickSocial_013.jpg"
+          class="img-fluid rounded shadow"
+          alt="Past Event Entry 2"
+          style="max-width: 400px; max-height: 267px; object-fit: cover"
+        />
       </div>
     </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
+    <div class="row justify-content-center">
+      <div
+        class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+      >
+        <img
+          src="https://tamuvps.secure-platform.com/file/1757/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU3LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.iyeOTFulZy5T3eFtyp87OXmBw5BzNpiSUYGrIFosU0o?quickSocial_014.jpg"
+          class="img-fluid rounded shadow"
+          alt="Past Event Entry 3"
+          style="max-width: 400px; max-height: 267px; object-fit: cover"
+        />
       </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <div class="card h-100 shadow" style="border-radius: 16px">
-        <div class="card-body" style="border-radius: 12px">
-          <h5 class="card-title mb-1 font-color">Jane Doe</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Texas A&M University</h6>
-          <p class="card-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam
-            rerum quos rem facilis temporibus sint illo consequatur pariatur
-            nobis non repellat odio nisi vitae sunt perferendis quod, assumenda
-            at officia!
-          </p>
-        </div>
+      <div
+        class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
+      >
+        <img
+          src="https://tamuvps.secure-platform.com/file/1758/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU4LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.-oBCmQWdyeQfotUWRfDKZ7i6WkT8QunMR8cTCpaxJLw?IMG_3999.jpg"
+          class="img-fluid rounded shadow"
+          alt="Past Event Entry 4"
+          style="max-width: 400px; max-height: 267px; object-fit: cover"
+        />
       </div>
     </div>
   </div>
-</div>
-
-<hr style="margin-top: 2rem; margin-bottom: 2rem" />
-<p style="text-align: center" class="oswald-heading font-color">
-  <span class="header-underline">Entries From Past Events</span>
-</p>
-<div class="container my-4">
-  <div class="row justify-content-center mb-3">
-    <div
-      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
-    >
-      <img
-        src="https://tamuvps.secure-platform.com/file/1755/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU1LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.LD_fNTABhj7dRUSQpOV7Lfuxum0Wz4DF3FpQQCcY9FM?quickSocial_004.jpg"
-        class="img-fluid rounded shadow"
-        alt="Past Event Entry 1"
-        style="max-width: 400px; max-height: 267px; object-fit: cover"
-      />
-    </div>
-    <div
-      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
-    >
-      <img
-        src="https://tamuvps.secure-platform.com/file/1756/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU2LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.XBpamVHfXeEIzRBKOmOtOXp6MRLweGYgoNvKHEF6avk?quickSocial_013.jpg"
-        class="img-fluid rounded shadow"
-        alt="Past Event Entry 2"
-        style="max-width: 400px; max-height: 267px; object-fit: cover"
-      />
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div
-      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
-    >
-      <img
-        src="https://tamuvps.secure-platform.com/file/1757/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU3LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.iyeOTFulZy5T3eFtyp87OXmBw5BzNpiSUYGrIFosU0o?quickSocial_014.jpg"
-        class="img-fluid rounded shadow"
-        alt="Past Event Entry 3"
-        style="max-width: 400px; max-height: 267px; object-fit: cover"
-      />
-    </div>
-    <div
-      class="col-12 col-sm-6 col-md-5 col-lg-4 mb-3 d-flex justify-content-center"
-    >
-      <img
-        src="https://tamuvps.secure-platform.com/file/1758/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJtZWRpYUlkIjoxNzU4LCJhbGxvd05vdFNpZ25lZFVybCI6IlRydWUiLCJpZ25vcmVPcGVuV2F0ZXJNZWRpYVVybEdlbmVyYXRpb25Nb2RlIjoiRmFsc2UiLCJmb3JjZURvd25sb2FkIjoiRmFsc2UifQ.-oBCmQWdyeQfotUWRfDKZ7i6WkT8QunMR8cTCpaxJLw?IMG_3999.jpg"
-        class="img-fluid rounded shadow"
-        alt="Past Event Entry 4"
-        style="max-width: 400px; max-height: 267px; object-fit: cover"
-      />
-    </div>
-  </div>
-</div>
+</body>
 
 <footer class="main-footer">
   <div class="main-footer__wrapper">

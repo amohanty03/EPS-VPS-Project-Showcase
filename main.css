@@ -567,16 +567,6 @@ header.main-header a:hover {
   color: #fce300;
 }
 
-ul {
-  margin-bottom: 2.5rem;
-  margin-left: 3.125rem;
-}
-
-ul li {
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
-}
-
 ul li ul {
   margin-top: 1rem;
   margin-left: 3.125rem;
@@ -621,7 +611,7 @@ hr {
 
 p {
   font-size: 1.125rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 nav.main-nav .main-nav__links {
@@ -1342,11 +1332,11 @@ header.main-header .main-nav__mobile-toggle button:hover {
 
 .banner-date {
   position: absolute;
-  top: 65%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 2rem; /* default mobile */
+  font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   margin: 0;
@@ -1356,13 +1346,40 @@ header.main-header .main-nav__mobile-toggle button:hover {
   letter-spacing: 2.5px;
 }
 
+.banner-subheading {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  margin: 0;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 2.5px;
+}
+
+.banner-subheading a:hover {
+  color: #fce300 !important;
+  cursor: pointer;
+}
+
+.banner-subheading a {
+  color: #fff;
+  text-decoration: none;
+  font-size: inherit;
+}
+
 .banner-heading {
   position: absolute;
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
-  font-size: 2rem; /* default mobile */
+  font-size: 2rem;
   font-weight: bold;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   margin: 0;
@@ -1389,11 +1406,23 @@ header.main-header .main-nav__mobile-toggle button:hover {
   color: #fff;
   border-radius: 6px;
   padding: 0.4em 0.5em;
-  font-size: 1.5rem; /* default mobile */
+  font-size: 1.5rem;
   z-index: 3;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   line-height: 1.1;
   letter-spacing: 1px;
+}
+
+.showcase-contact-info-email-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #500000;
+  border-radius: 6px;
+  padding: 10px 20px;
+  color: #500000;
+  background: #500000;
+  box-sizing: border-box;
 }
 
 ul.no-bullets {
@@ -1422,13 +1451,219 @@ ul.no-bullets {
   border-bottom-right-radius: 12px;
 }
 
-/* Base - <640px */
+.faq-list {
+  counter-reset: faq-counter;
+}
+
+.faq-list dt {
+  counter-increment: faq-counter;
+  font-weight: bold;
+  margin-top: 1rem;
+  position: relative;
+  padding-left: 2rem;
+  color: #500000;
+}
+
+.faq-list dt::before {
+  content: counter(faq-counter) ". ";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.faq-list dd {
+  font-size: 20px;
+  margin-left: 2rem;
+}
+.faq-list dd a {
+  font-size: inherit;
+}
+.faq-list dd ul li {
+  font-size: inherit !important;
+  margin: 0rem !important;
+  padding-top: 0.5rem !important;
+  list-style-type: disc !important;
+}
+
+.sponsor-card {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+}
+
+.sponsor-logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.sponsor-logo-container a {
+  flex: 1 1 auto;
+  max-width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+.sponsor-logo-container img {
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+div#content.core {
+  max-width: 100%;
+  padding: 0;
+}
+.content-right {
+  margin: 0;
+}
+
+.image-hover-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-hover-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.read-more-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #500000;
+  color: white !important;
+  padding: 10px 20px;
+  text-decoration: none !important;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.image-hover-container:hover img {
+  opacity: 0.7;
+}
+
+.image-hover-container:hover .read-more-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.read-more-button:hover {
+  color: #fce300 !important;
+}
+section.section-wrap.section-wrap--angled {
+  position: relative;
+  overflow: hidden;
+}
+
+section.section-wrap.section-wrap--angled:before {
+  display: block;
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -6.25rem;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 18.75rem;
+  -webkit-transform: skewY(-5deg);
+  transform: skewY(-4deg);
+  background: #eaeaea;
+}
+
+section.section-wrap.section-wrap--angled > * {
+  position: relative;
+  z-index: 1;
+}
+
+.students-judges.row {
+  align-items: stretch !important;
+}
+
+.v-center {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.stretch-img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.schedule-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+.schedule-horizontal {
+  display: flex;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: "Open Sans", sans-serif;
+}
+
+.schedule-item {
+  flex: 0 0 220px;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  background: #f9f9f9;
+  text-align: left;
+}
+
+.schedule-item:nth-child(even) {
+  background: #eee;
+}
+
+.schedule-item:last-child {
+  border-right: none;
+}
+
+.schedule-time {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #500000;
+}
+
+.schedule-desc {
+  font-size: 0.95rem;
+}
+
+.schedule-desc em {
+  font-style: italic;
+  color: #333;
+}
+
+@media (max-width: 576px) {
+  .sponsor-logo-container img {
+    max-height: 100px;
+  }
+}
+
 @media (max-width: 639px) {
   .banner-date {
     font-size: 1.7rem;
   }
   .banner-heading {
     font-size: 1.7rem;
+  }
+  .banner-subheading {
+    font-size: 0.75rem !important;
+    margin-top: 0.6rem !important;
   }
   .showcase-title {
     bottom: -0.95em;
@@ -1443,11 +1678,10 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship-container {
     padding-top: 0.2rem !important;
+    align-items: center !important;
   }
   .showcase-goals-sponsorship {
     flex-direction: column !important;
-  }
-  .showcase-goals-sponsorship {
     max-width: 100%;
     flex: 0 0 100%;
     padding-right: 0.5rem !important;
@@ -1455,6 +1689,7 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship img {
     max-height: 450px !important;
+    object-fit: fill;
   }
   .showcase-goals-sponsorship h2 {
     font-size: 1.5rem;
@@ -1462,8 +1697,23 @@ ul.no-bullets {
   .showcase-goals-sponsorship p {
     font-size: 1rem;
   }
-  .showcase-goals-sponsorship-container {
+  .students-judges-container {
     align-items: center !important;
+  }
+  .students-judges {
+    flex-direction: column !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .students-judges img {
+    max-height: 450px !important;
+    object-fit: fill;
+  }
+  .students-judges h2 {
+    font-size: 1.5rem;
+  }
+  .students-judges p {
+    font-size: 1rem;
   }
   .showcase-contact-info-subcontainer {
     padding: 0.5rem !important;
@@ -1475,20 +1725,16 @@ ul.no-bullets {
     font-size: 15px !important;
   }
   .team-participants {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1rem !important;
     text-align: justify !important;
   }
   .industry-judges {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
+    margin: 0 auto;
     font-size: 1rem !important;
     text-align: justify !important;
   }
@@ -1496,20 +1742,28 @@ ul.no-bullets {
     font-size: inherit;
   }
   .sponsor-capstone li {
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: bold;
   }
   .oswald-heading {
     text-align: center !important;
   }
+  .faq-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
-/* SM - 640px and up */
+
 @media (min-width: 640px) {
   .banner-date {
     font-size: 2.2rem;
   }
   .banner-heading {
     font-size: 2.2rem;
+  }
+  .banner-subheading {
+    font-size: 1.1rem !important;
+    margin-top: 0.8rem !important;
   }
   .showcase-title {
     font-size: 2rem;
@@ -1525,8 +1779,6 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship {
     flex-direction: column !important;
-  }
-  .showcase-goals-sponsorship {
     max-width: 100%;
     flex: 0 0 100%;
     padding-right: 0.5rem !important;
@@ -1534,11 +1786,27 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship img {
     max-height: 450px !important;
+    object-fit: fill;
   }
   .showcase-goals-sponsorship h2 {
     font-size: 2rem;
   }
   .showcase-goals-sponsorship p {
+    font-size: 1rem;
+  }
+  .students-judges {
+    flex-direction: column !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .students-judges img {
+    max-height: 450px !important;
+    object-fit: fill;
+  }
+  .students-judges h2 {
+    font-size: 2rem;
+  }
+  .students-judges p {
     font-size: 1rem;
   }
   .showcase-contact-info-subcontainer {
@@ -1551,20 +1819,15 @@ ul.no-bullets {
     font-size: 18px !important;
   }
   .team-participants {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1rem !important;
     text-align: justify !important;
   }
   .industry-judges {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
     font-size: 1rem !important;
     text-align: justify !important;
   }
@@ -1572,20 +1835,27 @@ ul.no-bullets {
     font-size: inherit;
   }
   .sponsor-capstone li {
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: bold;
   }
   .oswald-heading {
     text-align: center !important;
   }
+  .faq-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
-/* MD - 768px and up */
+
 @media (min-width: 768px) {
   .banner-date {
     font-size: 2.6rem;
   }
   .banner-heading {
     font-size: 2.6rem;
+  }
+  .banner-subheading {
+    font-size: 1.3rem !important;
   }
   .showcase-title {
     font-size: 2.4rem;
@@ -1602,8 +1872,6 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship {
     flex-direction: column !important;
-  }
-  .showcase-goals-sponsorship {
     max-width: 100%;
     flex: 0 0 100%;
     padding-right: 0.5rem !important;
@@ -1611,13 +1879,29 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship img {
     max-height: 650px !important;
-    padding-bottom: 1.5rem !important;
+    padding: 1.5rem !important;
+    object-fit: fill;
   }
   .showcase-goals-sponsorship h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
   .showcase-goals-sponsorship p {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
+  }
+  .students-judges {
+    flex-direction: column !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .students-judges img {
+    max-height: 650px !important;
+    object-fit: fill;
+  }
+  .students-judges h2 {
+    font-size: 2rem;
+  }
+  .students-judges p {
+    font-size: 1.1rem;
   }
   .showcase-contact-info-subcontainer {
     padding: 0.5rem !important;
@@ -1633,20 +1917,15 @@ ul.no-bullets {
     font-size: 18px !important;
   }
   .team-participants {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
     text-align: justify !important;
   }
   .industry-judges {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 1.3rem !important;
+    font-size: 1.1rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
     font-size: 1.3rem !important;
     text-align: justify !important;
   }
@@ -1654,20 +1933,24 @@ ul.no-bullets {
     font-size: inherit;
   }
   .sponsor-capstone li {
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: bold;
   }
   .oswald-heading {
     text-align: center !important;
   }
 }
-/* LG - 1024px and up */
+
 @media (min-width: 1024px) {
   .banner-date {
     font-size: 3rem;
   }
   .banner-heading {
     font-size: 3rem;
+  }
+  .banner-subheading {
+    font-size: 1.45rem !important;
+    margin-top: 0.65rem !important;
   }
   .showcase-title {
     font-size: 3rem;
@@ -1684,14 +1967,13 @@ ul.no-bullets {
   .showcase-goals-sponsorship {
     flex-direction: row !important;
     padding-top: 1.5rem !important;
-  }
-  .showcase-goals-sponsorship {
     max-width: 100%;
     flex: 0 0 100%;
   }
   .showcase-goals-sponsorship img {
     max-height: 850px !important;
-    padding-bottom: 1.5rem !important;
+    padding: 1.5rem !important;
+    object-fit: fill;
   }
   .showcase-goals-sponsorship h2 {
     font-size: 1.6rem;
@@ -1699,21 +1981,31 @@ ul.no-bullets {
   .showcase-goals-sponsorship p {
     font-size: 1rem;
   }
+  .students-judges {
+    flex-direction: row !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .students-judges img {
+    max-height: 850px !important;
+    object-fit: fill;
+  }
+  .students-judges h2 {
+    font-size: 1.6rem;
+  }
+  .students-judges p {
+    font-size: 1rem;
+  }
   .team-participants {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1.1rem !important;
     text-align: justify !important;
   }
   .industry-judges {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
     font-size: 1.1rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 1.5rem;
     font-size: 1.1rem !important;
     text-align: justify !important;
   }
@@ -1721,7 +2013,7 @@ ul.no-bullets {
     font-size: inherit;
   }
   .sponsor-capstone li {
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: bold;
   }
   .menu-item.has-submenu {
@@ -1739,6 +2031,10 @@ ul.no-bullets {
   .banner-heading {
     font-size: 3.5rem;
   }
+  .banner-subheading {
+    font-size: 1.75rem !important;
+    margin-top: 1rem !important;
+  }
   .showcase-title {
     bottom: -0.55em;
     font-size: 3.5rem;
@@ -1751,40 +2047,51 @@ ul.no-bullets {
   }
   .showcase-goals-sponsorship-container {
     padding-top: 0.5rem !important;
+    padding-left: 5.5rem !important;
+    padding-right: 5.5rem !important;
   }
   .showcase-goals-sponsorship {
     flex-direction: row !important;
-  }
-  .showcase-goals-sponsorship {
     max-width: 100%;
     flex: 0 0 100%;
   }
   .showcase-goals-sponsorship img {
     max-height: 800px !important;
-    padding-bottom: 1.5rem !important;
+    padding: 0.5rem !important;
+    object-fit: cover;
   }
   .showcase-goals-sponsorship h2 {
-    font-size: 2.35rem;
+    font-size: 2.25rem;
   }
   .showcase-goals-sponsorship p {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
+  }
+  .students-judges {
+    flex-direction: row !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+  .students-judges img {
+    max-height: 800px !important;
+    object-fit: cover;
+  }
+  .students-judges h2 {
+    font-size: 2.25rem;
+  }
+  .students-judges p {
+    font-size: 1.2rem;
   }
   .team-participants {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
-    font-size: 1.35rem !important;
+    font-size: 1.2rem !important;
     text-align: justify !important;
   }
   .industry-judges {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
-    font-size: 1.35rem !important;
+    font-size: 1.2rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    font-size: 1.2rem !important;
+    padding: 1.5rem;
+    font-size: 1.25rem !important;
     text-align: justify !important;
   }
   .sponsor-capstone a {
@@ -1794,7 +2101,7 @@ ul.no-bullets {
     font-size: inherit;
   }
   .sponsor-capstone li {
-    font-size: inherit;
+    font-size: inherit !important;
     font-weight: bold;
   }
   .menu-item.has-submenu {
