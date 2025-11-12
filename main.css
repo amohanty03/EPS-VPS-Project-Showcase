@@ -564,7 +564,7 @@ header.main-header a {
 header.main-header a:active,
 header.main-header a:focus,
 header.main-header a:hover {
-  color: #fce300;
+  color: #ffffffac;
 }
 
 ul li ul {
@@ -667,7 +667,7 @@ nav.main-nav div.main-nav__mobile-toggle span.hamburger-icon span:nth-child(4) {
 }
 
 nav.main-nav div.main-nav__mobile-toggle button:hover span.hamburger-icon span {
-  background-color: #fce300;
+  background-color: #ffffffac;
 }
 
 .link-collection {
@@ -922,8 +922,8 @@ header.main-header .main-nav__mobile-toggle .button:focus,
 header.main-header .main-nav__mobile-toggle .button:hover,
 header.main-header .main-nav__mobile-toggle button:focus,
 header.main-header .main-nav__mobile-toggle button:hover {
-  color: #fce300 !important;
-  border-bottom-color: #fce300 !important;
+  color: #ffffffac !important;
+  border-bottom-color: #ffffffac !important;
 }
 
 .main-footer {
@@ -957,7 +957,7 @@ header.main-header .main-nav__mobile-toggle button:hover {
 
 .main-footer a:hover,
 .main-footer a:focus {
-  color: #fce300 !important;
+  color: #ffffffac !important;
 }
 
 .main-footer ul li:last-child {
@@ -1241,16 +1241,16 @@ header.main-header .main-nav__mobile-toggle button:hover {
 .hamburger.change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-9px, 6px);
   transform: rotate(-45deg) translate(-9px, 6px);
-  color: #fce300 !important;
+  color: #ffffffac !important;
 }
 .hamburger.change .bar2 {
   opacity: 0;
-  color: #fce300 !important;
+  color: #ffffffac !important;
 }
 .hamburger.change .bar3 {
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
-  color: #fce300 !important;
+  color: #ffffffac !important;
 }
 
 .oswald-heading {
@@ -1277,7 +1277,7 @@ header.main-header .main-nav__mobile-toggle button:hover {
   font-size: 36px;
   text-decoration: underline;
   text-underline-offset: 6px;
-  text-decoration-color: rgb(255, 234, 0);
+  text-decoration-color: rgb(255, 255, 255);
   text-decoration-thickness: 1.5px;
 }
 
@@ -1326,7 +1326,7 @@ header.main-header .main-nav__mobile-toggle button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #045578c3;
+  background: rgba(137, 42, 42, 0.45);
   z-index: 1;
 }
 
@@ -1363,7 +1363,7 @@ header.main-header .main-nav__mobile-toggle button:hover {
 }
 
 .banner-subheading a:hover {
-  color: #fce300 !important;
+  color: #ffffffac !important;
   cursor: pointer;
 }
 
@@ -1558,7 +1558,7 @@ div#content.core {
 }
 
 .read-more-button:hover {
-  color: #fce300 !important;
+  color: #ffffffac !important;
 }
 section.section-wrap.section-wrap--angled {
   position: relative;
